@@ -1,0 +1,575 @@
+/* === GENERAL STYLE CSS BASE === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*BODY --FONT + background picture */
+@import url("https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+body {
+  font-family: "Gabriela", serif; /* font for the body text */
+  font-weight: 500; /* Quicksand font thickness */
+  font-size: 1.5rem;
+  background-image: url("https://media.istockphoto.com/id/1322277517/sv/foto/vilt-gr%C3%A4s-i-bergen-vid-solnedg%C3%A5ngen.jpg?s=612x612&w=0&k=20&c=DvAUY0LokvFpYv22iH33KCNXywFobMxBvhrhk0CVwL4=");
+  background-size: cover; /* makes the background image cover the entire page */
+  color: black; /* text color UNDER CV*/
+  line-height: 1.5; /* the SPACING/NO SPACING in microsoft word-affect*/
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Gabriela", serif;
+  font-weight: 500; /* OVERLOCK looks great in bold for headings*/
+  color: #e0f2f1; /* soft teal for headings*/
+}
+
+/* === NAVIGATION === */
+/*This part is all about styling the navigation bar: HOME, ABOUT ME, CV, PORTFOLIO, CONTACT */
+header {
+  background: cadetblue;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #ddd;
+  position: sticky;
+  top: 0; /*I dont think i like this, since it eats up the 'about me' section*/
+}
+
+nav {
+  display: flex; /* makes the links appear in a row instead of a column */
+  gap: 0.8rem;
+  justify-content: center; /* to center the navigation: home, about me, cv...etc */
+  font-family:
+    "brush script mt", cursive; /* font for the navigation links (override)*/
+}
+
+nav a {
+  text-decoration: none;
+  color: aquamarine;
+  padding: 2rem 4rem;
+  border-radius: 20px;
+  font-size: 3rem;
+}
+
+nav a:hover {
+  background: #0a94da; /*color of the link when hovered*/
+  color: whitesmoke; /*color of the text when hovered*/
+}
+
+nav a:active {
+  background: #06b8a492; /*color of the link when clicked*/
+  color: whitesmoke; /*color of the text when clicked*/
+}
+
+nav a.active {
+  background: #0a94da; /*color of the active link*/
+  color: whitesmoke; /*color of the active link text*/
+}
+
+/*=== PAGE HEADER ===*/ /*styling for the page header section, which is the first section on each page, containing the title and a brief introduction*/
+.page-header {
+  background: #067cd5; /*soft teal background for page headers*/
+  color: whitesmoke; /*white text for contrast*/
+  padding: 1rem 2rem; /*space around the text*/
+}
+
+.page-header h1 {
+  font-size: 3rem; /*large font size for the main title*/
+  margin-bottom: 0.5rem; /*space below the title*/
+}
+
+/* === HOMEPAGE ===*/
+
+/*Home IZABELLA IMAGE*/
+.hero img {
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.hero {
+  padding: 5rem 2rem; /* space around the hero/homepage section */
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* font size for "Hi, im " */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1689ed; /* color for "Hi, im " */
+}
+
+/*HOME SECTION: 'IZABELLA*/
+.hero h1 em {
+  font-style: normal; /* removes the default italic style of the <em> tag */
+  color: #1689ed;
+}
+
+/* text below 'Hi, im Izabella'*/
+.hero p {
+  /* hi,im izabella: sytling of text below*/
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* === BUTTONS ===*/
+.btn {
+  font-size: 1.5rem;
+  display: inline-block;
+  background: teal; /* dark background for SEE MY WORK buttons or links on the page*/
+  border-radius: 10px; /* rounded corners for the button */
+  color: white; /* white text for contrast */
+  text-decoration: none; /* removes the underline from links */
+  padding: 0.7rem 1.8rem; /* space inside the button */
+  border: none; /* removes the default border */
+  /*cursor: pointer;*/ /* changes the cursor to a pointer when hovering over the button */
+}
+
+.btn:hover {
+  background: teal; /* changes the background color when hovering */
+}
+
+/* === HOMEPAGE === */
+
+/* === General Card ===* Background color for the DESIGN,CODE,RESPONSIVENESS card*/
+.card {
+  background: teal; /* soft teal background for cards */
+  padding: 1.5rem; /* space inside the card */
+  border-radius: 10px; /* rounded corners for the card */
+  text-align: center; /* centers the text inside the card */
+  color: aquamarine; /* text color for the cards: design, code, responsiveness */
+}
+
+/* === CARD TITLES: font, margin from title to text below === */
+.card h3 {
+  font-size: 1.2rem; /* font size for the card titles: Design, Code, Responsiveness*/
+  margin-bottom: 0.5rem; /* space below the card titles */
+}
+
+/* SIZE OF CARD TEXT: design, code, responsiveness */
+.card p {
+  font-size: 1.3rem; /* font size for the card text: design, code, responsiveness */
+  /*opacity: 0.9; /* slightly lighter text for the card descriptions */
+}
+
+/* === ABOUT ME PAGE ===*/
+/*The about me section is designed as a grid with two columns: one for the image and one for the text [HI IM IZABELLA]. 
+The gap property creates space between the columns, and padding adds space around the entire section. */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* two columns: one for the image and one for the text */
+  gap: 3rem; /* space between the columns */
+  padding: 3rem 2rem; /* space around the about section */
+  max-width: 1400px; /* limits the width of the about section */
+  margin: 0 auto; /* centers the about section */
+  align-items: start; /* aligns the content to the top of the section */
+}
+
+/*The IMAGE in the ABOUT section */
+.about img {
+  width: 440px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block; /* Ensures the image behaves correctly in the container*/
+  margin: 0 auto;
+}
+
+/*HI IM IZABELLA text font style*/
+.about h2 {
+  font-family: "Garbriela, serif";
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem; /* space below heading */
+  color: #0a94da; /* heading color */
+}
+
+/* TEXT COLOR for the ABOUT ME description */
+.about p {
+  color: black; /* TEXT COLOR for the ABOUT ME description */
+  margin-bottom: 1rem; /* SPACE below the PARAGRAPHS in the ABOUT ME section */
+}
+
+/* === SKILL TAGS === : HTML & CSS, JAVASCRIPT, GIT, RESPONSIVENESS, .NET*/
+.skill-tag {
+  display: inline-block;
+  background: rgba(0, 128, 128, 0.5);
+  color: white; /*TEXT COLOR for SKILLTAGS*/
+  padding: 0.3rem 0.9rem; /*SPACE inside the SKILLTAGS*/
+  max-width: 1100px; /*limits the width of the skill tags container*/
+  margin: 0 auto; /*centers the skill tags container*/
+  border-radius: 16px; /*rounded corners for the skill tags*/
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: nowrap; /* prevents the skill tags from wrapping to the next line */
+  gap: 0.3rem; /* space between the skill tags */
+  align-items: center; /* vertically centers the skill tags */
+}
+
+/* === CV  ===*/
+/*CV-LAYOUT is designed to make 2 columns: one for the image and one for the text*/
+
+.cv-layout {
+  display: grid;
+  grid-template-columns: 1fr 2 fr; /* two columns: one for the image and one for the text */
+  gap: 3rem; /* space between the columns */
+  padding: 3rem 2rem; /* space around the cv section */
+  max-width: 1100px; /* limits the width of the cv section */
+  margin: 0 auto; /* centers the cv section */
+}
+
+.cv-section {
+  margin-bottom: 1rem; /* space below each section in the CV */
+}
+
+/* UNDERLINES between each VERTICAL section (contact, skills, languages, education, work experience) */
+.cv-section h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: aquamarine; /* color for the section headings */
+  border-bottom: 2px solid teal; /* adds a teal underline to the section headings */
+  padding-bottom: 0.3rem; /* space between the heading and the underline */
+  margin-bottom: 0.5rem; /* space below the section heading */
+}
+
+/* SPACE between each VERTICAL section BOTTOM (contact, skills, languages, education, work experience) */
+.cv-entry {
+  margin-bottom: 0.5rem; /* space below each entry in the CV */
+}
+
+/*FONT STYLE for MINI-headings like: System development .NET ~~ UNDER "EDUCATION" job titles, education, etc. */
+.cv-entry h3 {
+  font-size: 1.2rem; /* font size for job titles, education, etc. */
+  font-weight: 500; /* slightly bolder for emphasis */
+}
+
+.cv-entry .date {
+  font-size: 1.1rem; /* smaller font size for dates */
+  color: rgb(96, 39, 180);
+  font-weight: 600; /* slightly bolder for emphasis */
+  margin-bottom: 2rem; /* space below the date */
+}
+
+/*FONT STYLE for ORGANIZATION: systemdevelopment .net, American school of Dubai, Tiopepe*/
+.cv-entry .org {
+  font-style: italic; /* italic style for organization names */
+  font-size: 1.2rem;
+}
+
+.cv-entry p {
+  font-size: 0.9rem; /* font size for the description text in the CV */
+  margin-top: 0.3rem; /* space above the description text */
+}
+
+/*PLAYING with CV side adding a TRANSPARENT-COLORED VERTICAL RECTANGLE*/
+.cv-container {
+  background-color: rgba(
+    0,
+    128,
+    128,
+    0.5
+  ); /* semi-transparent teal background*/
+  border-radius: 20px; /*rounded corners for CV container*/
+  padding: 40px; /* space inside the cv container*/
+  max-width: 700px; /* Limits the width of the cv container*/
+  margin: 40px auto; /* centers the cv container and adds space above and below */
+}
+
+/* === CONTACT SECTION === -- adding transparent teal vertical rectangle*/
+.contact-container {
+  background-color: rgba(
+    0,
+    128,
+    128,
+    0.5
+  ); /* semi-transparent teal background*/
+  border-radius: 20px; /*rounded corners for contact container*/
+  padding: 40px; /*space inside the contact container*/
+  max-width: 700px; /* Limits the width of the contact container*/
+  margin: 40px auto; /* centers the contact container and adds space above and below */
+}
+
+/* CONTACT --> Izabella img */
+.contact-container img {
+  display: block; /* Ensures the image behaves correctly in the container */
+  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  flex-shrink: 0; /* prevents the image from shrinking in height when the container is resized */
+}
+
+/* CONTACT --> Get in Touch heading*/
+.contact-info > h2,
+.contact-info > p {
+  text-align: center; /* centers the "Get in Touch" heading and the "I am open to work" paragraph */
+}
+
+/* === PORTFOLIO SECTION ===*/
+.intro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* creates three equal columns */
+  gap: 2rem; /* space between the cards */
+  padding: 2rem; /* space around the cards */
+  max-width: 1400px; /* limits the width of the card container */
+  margin: 0 auto; /* centers the card container */
+  margin-top: 14rem;
+}
+
+.intro-card {
+  background: rgba(0, 128, 128, 0.9);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.intro-card h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.5rem;
+}
+
+.intro-card p {
+  margin: 0;
+  font-size: 1rem;
+}
+.portfolio-grid {
+  display: grid; /*allowing FLEXIBLE LAYOUT*/
+  grid-template-columns: repeat(3, 1fr); /* creates three equal columns */
+  gap: 1.5rem; /* space between the portfolio items */
+  padding: 2rem; /* space around the portfolio grid */
+  max-width: 1100px; /* limits the width of the portfolio grid */
+  margin: 0 auto; /* centers the portfolio grid */
+}
+
+.portfolio-grid .card {
+  background: rgba(
+    0,
+    128,
+    128,
+    0.5
+  ); /* semi-transparent teal background for the cards */
+  padding: 1rem; /* space inside the card */
+  overflow: hidden; /* Ensures that the content does not overflow the card's rounded corners */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* Adds a subtle shadow for depth */
+}
+
+/* PORTFOLIO IMAGE */
+.portfolio-grid .card img {
+  width: 100%;
+  height: 180px; /* Fixed height for the images to maintain consistency across cards */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  background: rgba(
+    0,
+    128,
+    128,
+    0.3
+  ); /* semi-transparent teal background for the image */
+  display: block; /* Ensures the image behaves correctly in the container */
+  border-radius: 12px; /* rounded corners for the images */
+}
+
+/* PORTFOLIO: GITHUB & QUIZ SPACE --> EXTEND VERTICAL space in TEAL RECTANGLE BACKGROUND -*/
+.card-body {
+  padding: 2rem; /*VERTICAL space in TEAL RECTANGLE BACKGROUND - VERTICAL EXTENDOR*/
+}
+
+/* PORTFOLIO: GitHub --> AVSTÅND mellan "GitHub" texten och 'blåa mini-description'*/
+.card-body h3 {
+  margin-bottom: 0.1rem; /* 0.1rem minsta avståndet*/
+}
+
+/*PORTFOLIO: GitHub --> FONT SIZE 'blåa mini-description'*/
+.card-body p {
+  font-size: 1rem; /* font size for the 'blåa mini-description' */
+  color: aquamarine; /* 'blåa mini-description' text color */
+  margin-bottom: 0.5rem; /* space below the 'blåa mini-description' AND the MORE INFO*/
+}
+
+/*=== MODALS ===*/
+/* POP-UP BOX that appears on top of your screen to show something quickly*/
+/*Modals = "FLASHES" YOU*/
+
+/* I DONT LIKE THIS YET*/
+.modal-overlay {
+  display: none; /* Hides the modal by default */
+  position: fixed; /* Makes the modal stay in place even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    128,
+    128,
+    0.5
+  ); /* semi-transparent teal background for the modal overlay */
+  display: none; /* enables flexbox for centering */
+  align-items: center; /* centers vertically */
+  justify-content: center; /* centers horizontally */
+  z-index: 200; /* ensures the modal appears above other content */
+}
+
+.modal-overlay:target {
+  display: flex; /* shows the modal when targeted */
+}
+
+/* "WEB SHOP" */
+.modal {
+  background: rgba(
+    0,
+    100,
+    100
+  ); /* semi-transparent teal background for the modal */
+  padding: 2rem; /* space inside the modal */
+  border-radius: 10px; /* rounded corners for the modal */
+  max-width: 500px; /* limits the width of the modal */
+  width: 90%;
+  position: relative; /* allows for absolute positioning of the close button */
+}
+
+/* WEB SHOP --> SPACE between rubrik 'web shop' and text/description below*/
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+/* WEB SHOP --> TEXT COLOR & SPACING for DESCRIPTION */
+.modal p {
+  color: aquamarine; /* text color for the modal description */
+  margin-bottom: 1rem; /* space below the modal description */
+}
+
+/* CLOSE BUTTON --> right pink cirkle with 'x' */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-decoration: none;
+  color: black; /*removestheunderlinefromtheclosebutton*/
+  font-size: 1.5rem; /*colorfortheclosebutton*/
+  background: rgba(255, 105, 180, 0.5); /*fontsizefortheclosebutton*/
+  width: 2rem; /*backgroundcolorfortheclosebutton*/
+  height: 2rem;
+  border-radius: 20px;
+  display: flex; /* enables flexbox for centering the "X" inside the close button */
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: rgba(
+    0,
+    128,
+    128,
+    0.5
+  ); /* background color when hovering over the close button */
+  color: white; /* text color when hovering over the close button */
+}
+
+/* === CONTACT SECTION ===*/
+
+.contact-info {
+  padding: rem 1rem; /* space inside the contact info section */
+  max-width: 600px; /* limits the width of the contact info section */
+  margin: 0 auto; /* centers the contact info section */
+}
+
+/* CONTACT SECTION "Get in Touch" heading */
+.contact-info h2 {
+  color: #1689ed; /*color for 'get in touch' */
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem; /* space below the "Get in Touch" heading */
+}
+
+/* CONTACT SECTION "Get in Touch"--> PARAGRAPH: i am open to work */
+.contact-info > p {
+  color: black;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 2rem; /* space below the "I am open to work" paragraph */
+}
+
+.contact-item {
+  display: flex; /* allows for flexible layout of contact items */
+  align-items: flext-start; /* aligns items to the top of the container */
+  gap: 1rem; /* space between the icon and the text in each contact item */
+  margin-bottom: 1.5rem; /* space below each contact item */
+}
+
+.contact-icon {
+  font-size: 1.4rem; /* size for the contact icons */
+}
+
+.contact-item h4 {
+  font-size: 1.3rem; /*Font size for contact headings: email, phone, location, LinkedIn*/
+  text-transform: uppercase; /* makes the contact headings uppercase */
+  letter-spacing: 0.08em; /* adds spacing between letters for the contact headings */
+  color: whitesmoke; /* color for the contact headings */
+}
+
+/* CONTACT SECTION --> "Get in Touch"--> PARAGRAPH: bellanthie, 0762713529, varberg osv.. */
+.contact-item p,
+.contact-item a {
+  color: black; /* color for the contact details (email, phone number, location, LinkedIn URL) */
+  font-size: 1.4rem; /* font size for the contact details */
+  text-decoration: none; /* removes the underline from links */
+  font-weight: 550; /* font weight for the contact details */
+  letter-spacing: 0.1em; /* adds spacing between letters for the contact details */
+}
+
+.contact-item a:hover {
+  color: pink; /* color for the contact details when hovered */
+}
+
+/* === MEDIA ADAPTATION ===!!!*/
+@media (max-width: 768px) {
+  .intro-cards {
+    grid-template-columns: 1fr;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  /* keepis contact detail rows readable and unchanged in structure*/
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* keeps image and intro centered and nice*/
+  .contact-container img {
+    width: 180px;
+    height: 180px;
+  }
+  .contct-info {
+    max-width: 100%;
+  }
+  .contact-item {
+    text-align: left;
+  }
+}

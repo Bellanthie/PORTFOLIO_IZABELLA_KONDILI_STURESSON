@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Izabella Kondili Sturesson</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="om-mig.html">About Me</a>
+        <a href="cv.html">CV</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="kontakt.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="portfolio-grid">
+        <article class="card">
+          <img src="images/libraryApp.jpg" alt="Library system project" />
+          <div class="card-body">
+            <h3>Library system</h3>
+            <a href="#modal-2" class="btn">More info</a>
+          </div>
+        </article>
+        <!-- .card = HELA LÅDAN(bilden)-->
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80"
+            alt="bankApp"
+          />
+          <!-- .card-body = TEXT DELEN / RUBRIKEN "bank app"-->
+          <div class="card-body">
+            <h3>Bank App</h3>
+            <!-- RUBRIKEN Bank App title -->
+            <!--<p>An interactive quiz game built with JavaScript.</p>-->
+            <a href="#modal-3" class="btn">More info</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/Pyramid.webp" alt="Pyramid project" />
+          <div class="card-body">
+            <h3>Pyramid</h3>
+            <a href="#modal-4" class="btn">More info</a>
+          </div>
+        </article>
+      </section>
+      <section class="intro-cards">
+        <div class="card">
+          <h3>Design</h3>
+          <p>I care about how things look and feel</p>
+        </div>
+        <div class="card">
+          <h3>Code</h3>
+          <p>Html, CSS and JavaScript, .NET</p>
+        </div>
+        <div class="card">
+          <h3>Responsiveness</h3>
+          <p>Built for every screen</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODALS -->
+
+    <div class="modal-overlay" id="modal-2">
+      <div class="modal">
+        <a href="#" class="close-btn">x</a>
+        <h2>Library System</h2>
+        <p>
+          A library management system built in C#. Users can choose between 5
+          books that they borrow and return. The system keeps track of the books
+          and their availability, allowing users to manage their library
+          efficiently.
+        </p>
+        <p><strong>Technologies:</strong> C# .NET</p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-3">
+      <div class="modal">
+        <a href="#" class="close-btn">x</a>
+        <h2>Bank App</h2>
+        <p>
+          A banking application built in C#. Users can create accounts, deposit,
+          withdraw and check balance. Including a "You're locked out after 3
+          wrong password fails"
+        </p>
+        <p><strong>Technologies:</strong> C# .NET</p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-4">
+      <div class="modal">
+        <a href="#" class="close-btn">x</a>
+        <h2>Pyramid</h2>
+        <p>
+          Building a pyramid in C#. The user can choose the height of the
+          pyramid and the symbol used to build it. The program then generates a
+          pyramid based on the user's input, demonstrating basic programming
+          concepts such as loops and conditionals.
+        </p>
+        <p><strong>Technologies:</strong> C# .NET</p>
+      </div>
+    </div>
+  </body>
+</html>
