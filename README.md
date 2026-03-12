@@ -28,6 +28,13 @@ Personal multi-page portfolio website built with HTML and CSS.
 
 - Main site font: Gabriela (`"Gabriela", serif`).
 - Navigation font can be overridden separately in `style.css` if needed.
+- Texten försöker anpassa sig till skärmen utan att bli för liten eller för stor.
+- clamp() funktion: min 1.05rem: golvet (texten får aldrig bli mindre än detta)
+- rem -> root em: "min size 1.05rem" storleken baserad på root-fonten i HTML. standar är browsers 16px.
+- vw -> vewport width: "1.8% av skärmens bredd" --> av låt texten växa baserat på skärmens bredd.
+- rem -> root em: "1.5rem (taket)" --> även om skärmen är enorm=4k monitor, kommer texten aldrig bli större än 24px
+
+* clamp() ger texten ett kontrollerat elastiskt beteende.
 
 ## Assets
 

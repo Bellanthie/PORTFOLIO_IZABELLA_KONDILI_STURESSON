@@ -6,16 +6,32 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
 /*BODY --FONT + background picture */
 @import url("https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
 body {
   font-family: "Gabriela", serif; /* font for the body text */
   font-weight: 500; /* Quicksand font thickness */
-  font-size: 1.5rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.5rem); /* sets responsive text seize for the whole body*/
   background-image: url("https://media.istockphoto.com/id/1322277517/sv/foto/vilt-gr%C3%A4s-i-bergen-vid-solnedg%C3%A5ngen.jpg?s=612x612&w=0&k=20&c=DvAUY0LokvFpYv22iH33KCNXywFobMxBvhrhk0CVwL4=");
   background-size: cover; /* makes the background image cover the entire page */
   color: black; /* text color UNDER CV*/
   line-height: 1.5; /* the SPACING/NO SPACING in microsoft word-affect*/
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
 }
 
 h1,
@@ -32,13 +48,14 @@ header {
   background: cadetblue;
   padding: 0.5em;
   border-bottom: 3px solid #ddd;
-  position: sticky;
+  position: static;
   top: 0; /*I dont think i like this, since it eats up the 'about me' section*/
 }
 
 nav {
   display: flex; /* makes the links appear in a row instead of a column */
   gap: 0.8rem;
+  flex-wrap: wrap;
   justify-content: center; /* to center the navigation: home, about me, cv...etc */
   font-family:
     "brush script mt", cursive; /* font for the navigation links (override)*/
@@ -49,7 +66,11 @@ nav a {
   color: aquamarine;
   padding: 0.25em;
   border-radius: 20px;
-  font-size: 2rem;
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 nav a:hover {
@@ -83,8 +104,8 @@ nav a.active {
 
 /*Home IZABELLA IMAGE*/
 .hero img {
-  width: 440px;
-  height: 440px;
+  width: clamp(220px, 45vw, 440px);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover; /* Ensures the image covers the area without distortion */
   display: block;
@@ -94,6 +115,7 @@ nav a.active {
 .hero {
   padding: 5rem 2rem; /* space around the hero/homepage section */
   max-width: 700px;
+  width: min(100% - 1.5rem, 700px);
   margin: 0 auto;
   text-align: center;
 }
@@ -121,13 +143,13 @@ nav a.active {
 
 /* === BUTTONS ===*/
 .btn {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
   display: inline-block;
   background: teal; /* dark background for SEE MY WORK buttons or links on the page*/
   border-radius: 10px; /* rounded corners for the button */
   color: white; /* white text for contrast */
   text-decoration: none; /* removes the underline from links */
-  padding: 0.7rem 1.8rem; /* space inside the button */
+  padding: 0.6rem clamp(1rem, 3vw, 1.8rem); /* space inside the button */
   border: none; /* removes the default border */
   /*cursor: pointer;*/ /* changes the cursor to a pointer when hovering over the button */
 }
@@ -168,14 +190,15 @@ The gap property creates space between the columns, and padding adds space aroun
   gap: 3rem; /* space between the columns */
   padding: 3rem 2rem; /* space around the about section */
   max-width: 1400px; /* limits the width of the about section */
+  width: min(100% - 1.5rem, 1400px);
   margin: 0 auto; /* centers the about section */
   align-items: start; /* aligns the content to the top of the section */
 }
 
 /*The IMAGE in the ABOUT section */
 .about img {
-  width: 440px;
-  height: 440px;
+  width: clamp(220px, 42vw, 440px);
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   display: block; /* Ensures the image behaves correctly in the container*/
@@ -210,7 +233,7 @@ The gap property creates space between the columns, and padding adds space aroun
 
 .skills-list {
   display: flex;
-  flex-wrap: nowrap; /* prevents the skill tags from wrapping to the next line */
+  flex-wrap: wrap;
   gap: 0.3rem; /* space between the skill tags */
   align-items: center; /* vertically centers the skill tags */
 }
@@ -220,7 +243,7 @@ The gap property creates space between the columns, and padding adds space aroun
 
 .cv-layout {
   display: grid;
-  grid-template-columns: 1fr 2 fr; /* two columns: one for the image and one for the text */
+  grid-template-columns: 1fr 2fr; /* two columns: one for the image and one for the text */
   gap: 3rem; /* space between the columns */
   padding: 3rem 2rem; /* space around the cv section */
   max-width: 1100px; /* limits the width of the cv section */
@@ -279,8 +302,9 @@ The gap property creates space between the columns, and padding adds space aroun
     0.5
   ); /* semi-transparent teal background*/
   border-radius: 20px; /*rounded corners for CV container*/
-  padding: 40px; /* space inside the cv container*/
+  padding: clamp(1rem, 3vw, 2.5rem); /* space inside the cv container*/
   max-width: 700px; /* Limits the width of the cv container*/
+  width: min(100% - 1.5rem, 700px);
   margin: 40px auto; /* centers the cv container and adds space above and below */
 }
 
@@ -293,8 +317,9 @@ The gap property creates space between the columns, and padding adds space aroun
     0.5
   ); /* semi-transparent teal background*/
   border-radius: 20px; /*rounded corners for contact container*/
-  padding: 40px; /*space inside the contact container*/
+  padding: clamp(1rem, 3vw, 2.5rem); /*space inside the contact container*/
   max-width: 700px; /* Limits the width of the contact container*/
+  width: min(100% - 1.5rem, 700px);
   margin: 40px auto; /* centers the contact container and adds space above and below */
 }
 
@@ -322,8 +347,9 @@ The gap property creates space between the columns, and padding adds space aroun
   gap: 2rem; /* space between the cards */
   padding: 2rem; /* space around the cards */
   max-width: 1400px; /* limits the width of the card container */
+  width: min(100% - 1.5rem, 1400px);
   margin: 0 auto; /* centers the card container */
-  margin-top: 14rem;
+  margin-top: 2rem;
 }
 
 .intro-card {
@@ -349,6 +375,7 @@ The gap property creates space between the columns, and padding adds space aroun
   gap: 1.5rem; /* space between the portfolio items */
   padding: 2rem; /* space around the portfolio grid */
   max-width: 1100px; /* limits the width of the portfolio grid */
+  width: min(100% - 1.5rem, 1100px);
   margin: 0 auto; /* centers the portfolio grid */
 }
 
@@ -418,6 +445,8 @@ The gap property creates space between the columns, and padding adds space aroun
   align-items: center; /* centers vertically */
   justify-content: center; /* centers horizontally */
   z-index: 200; /* ensures the modal appears above other content */
+  overflow-y: auto;
+  padding: 1rem;
 }
 
 .modal-overlay:target {
@@ -435,6 +464,8 @@ The gap property creates space between the columns, and padding adds space aroun
   border-radius: 10px; /* rounded corners for the modal */
   max-width: 500px; /* limits the width of the modal */
   width: 90%;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
   position: relative; /* allows for absolute positioning of the close button */
 }
 
@@ -479,7 +510,7 @@ The gap property creates space between the columns, and padding adds space aroun
 /* === CONTACT SECTION ===*/
 
 .contact-info {
-  padding: rem 1rem; /* space inside the contact info section */
+  padding: 1rem; /* space inside the contact info section */
   max-width: 600px; /* limits the width of the contact info section */
   margin: 0 auto; /* centers the contact info section */
 }
@@ -503,7 +534,7 @@ The gap property creates space between the columns, and padding adds space aroun
 
 .contact-item {
   display: flex; /* allows for flexible layout of contact items */
-  align-items: flext-start; /* aligns items to the top of the container */
+  align-items: flex-start; /* aligns items to the top of the container */
   gap: 1rem; /* space between the icon and the text in each contact item */
   margin-bottom: 1.5rem; /* space below each contact item */
 }
@@ -527,56 +558,112 @@ The gap property creates space between the columns, and padding adds space aroun
   text-decoration: none; /* removes the underline from links */
   font-weight: 550; /* font weight for the contact details */
   letter-spacing: 0.1em; /* adds spacing between letters for the contact details */
+  overflow-wrap: anywhere;
 }
 
 .contact-item a:hover {
   color: pink; /* color for the contact details when hovered */
 }
 
-/* === MEDIA ADAPTATION ===!!!*/
-@media (max-width: 500px) {
-  .nav {
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    position: absolute;
-    background-color: black;
+/* === MEDIA ADAPTATION === */
+/* Mobile */
+@media (max-width: 600px) {
+  nav {
+    gap: 0.4rem;
   }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero img,
+  .about img {
+    width: min(100%, 320px);
+  }
+
+  .about,
+  .cv-layout,
+  .portfolio-grid,
   .intro-cards {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
   }
-  img {
+
+  .cv-layout,
+  .about,
+  .portfolio-grid,
+  .intro-cards {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .skills-list {
+    flex-wrap: wrap;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem auto;
+    padding: 1.2rem;
+  }
+
+  .contact-container img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .contact-info {
     max-width: 100%;
-    height: auto;
+  }
+
+  .contact-item {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 1023px) {
+  nav a {
+    font-size: 1.4rem;
   }
 
   .about {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .about img {
+    width: min(100%, 320px);
   }
 
   .cv-layout {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-grid {
-    grid-template-columns: 1fr;
+  .portfolio-grid,
+  .intro-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
-  /* keepis contact detail rows readable and unchanged in structure*/
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  /* keeps image and intro centered and nice*/
-  .contact-container img {
-    width: 180px;
-    height: 180px;
-  }
-  .contct-info {
-    max-width: 100%;
-  }
-  .contact-item {
-    text-align: left;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .portfolio-grid,
+  .intro-cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
