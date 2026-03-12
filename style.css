@@ -30,7 +30,7 @@ h3 {
 /*This part is all about styling the navigation bar: HOME, ABOUT ME, CV, PORTFOLIO, CONTACT */
 header {
   background: cadetblue;
-  padding: 1rem 2rem;
+  padding: 0.5em;
   border-bottom: 3px solid #ddd;
   position: sticky;
   top: 0; /*I dont think i like this, since it eats up the 'about me' section*/
@@ -47,9 +47,9 @@ nav {
 nav a {
   text-decoration: none;
   color: aquamarine;
-  padding: 2rem 4rem;
+  padding: 0.25em;
   border-radius: 20px;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 nav a:hover {
@@ -534,9 +534,16 @@ The gap property creates space between the columns, and padding adds space aroun
 }
 
 /* === MEDIA ADAPTATION ===!!!*/
-@media (max-width: 768px) {
+@media (max-width: 500px) {
+  .nav {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    position: absolute;
+    background-color: black;
+  }
   .intro-cards {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
   img {
     max-width: 100%;
