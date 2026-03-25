@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="easterEgg2.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,7 +24,9 @@
     </header>
 
     <main>
-      <section class="portfolio-grid">
+      <p id="loading">Loading Project</p>
+      <section class="portfolio-grid" id="github-projects">
+        <script src="git-hub.js" defer></script>
         <article class="card">
           <img src="images/libraryApp.jpg" alt="Library system project" />
           <div class="card-body">
@@ -31,15 +34,15 @@
             <a href="#modal-2" class="btn">More info</a>
           </div>
         </article>
-        <!-- .card = HELA LÅDAN(bilden)-->
+        <!-- .card = HELA LÅDAN(bilden) -->
         <article class="card">
           <img
             src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80"
             alt="bankApp"
           />
-          <!-- .card-body = TEXT DELEN / RUBRIKEN "bank app"-->
-          <div class="card-body">
-            <h3>Bank App</h3>
+          <!-- .card-body = TEXT DELEN / RUBRIKEN "bank app"
+          <!-- <div class="card-body">
+            <h3>Bank App</h3> -->
             <!-- RUBRIKEN Bank App title -->
             <a href="#modal-3" class="btn">More info</a>
           </div>
@@ -106,6 +109,12 @@
           concepts such as loops and conditionals.
         </p>
         <p><strong>Technologies:</strong> C# .NET</p>
+      </div>
+    </div>
+    <div class="modal-overlay" id="easterEgg2-modal">
+      <div class="modal">
+        <a href="#" class="close-btn">x</a>
+        <p>🥳 "You did it!"</p>
       </div>
     </div>
   </body>

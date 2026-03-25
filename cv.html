@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="eduwork.js" defer>
+      /* koppla javascript funktionalitet till hemsidan --> kör inte denna förrän DOMen är ladda*/
+    </script>
+    <script src="easterEgg2.js" defer></script>
   </head>
   <body>
     <header>
@@ -53,37 +57,43 @@
             <section class="cv-section">
               <h2>Education</h2>
 
-              <div class="cv-entry">
-                <h3>System development .NET</h3>
+              <div id="cv-education">
+                <!-- <h3>System development .NET</h3>
                 <span class="date">2025 - 2027</span>
                 <p class="org">System development .NET 2025</p>
-                <p>Studying system development .NET</p>
+                <p>Studying system development .NET</p> -->
               </div>
 
-              <div class="cv-entry">
-                <h3>Primary School</h3>
+              <div class="cv-education">
+                <!-- <h3>Primary School</h3>
                 <span class="date">1992-2001</span>
                 <p class="org">American School of Dubai</p>
-                <p>Completed primary school with good grades</p>
+                <p>Completed primary school with good grades</p> -->
               </div>
             </section>
 
             <section class="cv-section">
-              <h2>Work Experience</h2>
+              <h2>Employments</h2>
 
-              <div class="cv-entry">
-                <h3>Summer jobs - Waitress</h3>
+              <div id="cv-work">
+                <!-- <h3>Summer jobs - Waitress</h3>
                 <span class="date">May-October 2014</span>
                 <p class="org">TioPepe, Kungsbacka</p>
                 <p>
                   Served food and drinks, handled the cash register, and
                   welcomed all guests.
-                </p>
+                </p> -->
               </div>
             </section>
           </div>
         </div>
       </div>
     </main>
+    <div class="modal-overlay" id="easterEgg2-modal">
+      <div class="modal">
+        <a href="#" class="close-btn">x</a>
+        <p>🥳 "You did it!"</p>
+      </div>
+    </div>
   </body>
 </html>

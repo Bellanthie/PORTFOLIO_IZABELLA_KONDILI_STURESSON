@@ -1,0 +1,78 @@
+{
+  "educations": [
+    {
+      "school": "Dubai American Academy",
+      "education": "Middle and High School",
+      "period": "1997 - 2005"
+    },
+    {
+      "school": "Högalids Folkhögskola, Kalmar",
+      "education": "Komvux, Music & Vocals",
+      "period": "2005 - 2006"
+    },
+    {
+      "school": "Art College, Folkuniversitetet",
+      "education": "Interior Design, College",
+      "period": "2007 - 2008"
+    },
+    {
+      "school": "Oslo Frisorskole Göteborg",
+      "education": "Private Vocational education",
+      "period": "2008 - 2009"
+    },
+    {
+      "school": "Hotel & Hospitality",
+      "education": "College",
+      "period": "2012"
+    },
+    {
+      "school": "YrkesAcademin",
+      "education": "Professional Busdriver",
+      "period": "2019"
+    },
+    {
+      "school": "Campus Varberg",
+      "education": "Public Vocational education",
+      "period": "2025 - 2027"
+    }
+  ],
+
+  "employments": [
+    {
+      "description": "Bus driver",
+      "period": "2019 - 2024",
+      "employer": "Nobina, Varberg",
+      "url": "https://www.nobina.se/"
+    },
+    {
+      "description": "Preschool assistant, Special needs assistant",
+      "period": "2017 - 2019",
+      "employer": "Kungsbacka Municipality",
+      "url": "https://kungsbacka.se/"
+    },
+    {
+      "description": "Waitress",
+      "period": "March - October 2014",
+      "employer": "F.d. TioPepe Kungsbacka",
+      "url": "n-a"
+    },
+    {
+      "description": "Courier",
+      "period": "March - November 2015",
+      "employer": "Flexit AB, Arkitektkopia Högsbo",
+      "url": "n-a"
+    },
+    {
+      "description": "Hairdresser",
+      "period": "August - September 2016",
+      "employer": "Tina's Salong & Javid's Hair City, Kungsbacka",
+      "url": "https://www.tinassalong.com/"
+    },
+    {
+      "description": "Receptionist",
+      "period": "2009 - 2010",
+      "employer": "COWI A/S Qatar",
+      "url": "https://www.cowi.com/"
+    }
+  ]
+}

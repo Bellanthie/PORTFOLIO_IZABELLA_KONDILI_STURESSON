@@ -11,8 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="easterEgg1.js" defer>
+      /* koppla javascript funktionalitet till hemsidan --> kör inte denna förrän DOMen är ladda*/
+    </script>
+    <script src="easterEgg2.js" defer></script>
   </head>
-  <body>
+  <body class="bg1">
     <header>
       <nav>
         <a href="index.html" class="active">Home</a>
@@ -24,15 +28,21 @@
     </header>
 
     <main>
-      <section class="hero">
+      <span class="hero">
         <img src="images/izabella-profile.jpg" alt="Izabella Profile Picture" />
-        <h1>Hi, I'm <em>Izabella</em> 👋</h1>
-        <p>
+        <h1 class="glassBox">I'm Izabella <span id="hand">👋</span></h1>
+        <p class="glassBox">
           Web developer and system developer .NET in training. Welcome to my
           portfolio!
-        </p>
-        <a href="portfolio.html" class="btn">See my work</a>
-      </section>
+        </p></span
+      >
+      <a href="portfolio.html" class="btn">See my work</a>
     </main>
+    <div class="modal-overlay" id="easterEgg2-modal">
+      <div class="modal">
+        <a href="#" class="close-btn">x</a>
+        <p>🥳 "You did it!"</p>
+      </div>
+    </div>
   </body>
 </html>

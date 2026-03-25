@@ -1,4 +1,5 @@
 /* === GENERAL STYLE CSS BASE === */
+@import url("https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
 
 * {
   margin: 0;
@@ -17,17 +18,32 @@ body {
 }
 
 /*BODY --FONT + background picture */
-@import url("https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
 body {
   font-family: "Gabriela", serif; /* font for the body text */
   font-weight: 500; /* Quicksand font thickness */
-  font-size: clamp(1.05rem, 1.8vw, 1.5rem); /* sets responsive text seize for the whole body*/
-  background-image: url("https://media.istockphoto.com/id/1322277517/sv/foto/vilt-gr%C3%A4s-i-bergen-vid-solnedg%C3%A5ngen.jpg?s=612x612&w=0&k=20&c=DvAUY0LokvFpYv22iH33KCNXywFobMxBvhrhk0CVwL4=");
+  font-size: clamp(
+    1.05rem,
+    1.8vw,
+    1.5rem
+  ); /* sets responsive text seize for the whole body*/
+  /* background-image: url("https://media.istockphoto.com/id/1322277517/sv/foto/vilt-gr%C3%A4s-i-bergen-vid-solnedg%C3%A5ngen.jpg?s=612x612&w=0&k=20&c=DvAUY0LokvFpYv22iH33KCNXywFobMxBvhrhk0CVwL4="); */
+  background-image: url("./images/homepage1.jpg");
   background-size: cover; /* makes the background image cover the entire page */
   color: black; /* text color UNDER CV*/
   line-height: 1.5; /* the SPACING/NO SPACING in microsoft word-affect*/
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.bg1 {
+  background-image: url("./images/parthenon.jpg");
+}
+
+.bg2 {
+  background-image: url("./images/beduin.jpg");
+}
+bg3 {
+  background-image: url("./images/homepage1.jpg");
 }
 
 main {
@@ -144,7 +160,7 @@ nav a.active {
 /* === BUTTONS ===*/
 .btn {
   font-size: clamp(1rem, 2.2vw, 1.5rem);
-  display: inline-block;
+  display: flex;
   background: teal; /* dark background for SEE MY WORK buttons or links on the page*/
   border-radius: 10px; /* rounded corners for the button */
   color: white; /* white text for contrast */
@@ -152,6 +168,7 @@ nav a.active {
   padding: 0.6rem clamp(1rem, 3vw, 1.8rem); /* space inside the button */
   border: none; /* removes the default border */
   /*cursor: pointer;*/ /* changes the cursor to a pointer when hovering over the button */
+  justify-self: center;
 }
 
 .btn:hover {
@@ -429,7 +446,7 @@ The gap property creates space between the columns, and padding adds space aroun
 
 /* I DONT LIKE THIS YET*/
 .modal-overlay {
-  display: none; /* Hides the modal by default */
+  display: none; /*Hides the modal by default*/
   position: fixed; /* Makes the modal stay in place even when scrolling */
   top: 0;
   left: 0;
@@ -568,6 +585,7 @@ The gap property creates space between the columns, and padding adds space aroun
 /* === MEDIA ADAPTATION === */
 /* Mobile */
 @media (max-width: 600px) {
+  /*adjusts things*/
   nav {
     gap: 0.4rem;
   }
@@ -613,6 +631,7 @@ The gap property creates space between the columns, and padding adds space aroun
   }
 
   .contact-container {
+    /*Tablet breakpoint*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -636,7 +655,7 @@ The gap property creates space between the columns, and padding adds space aroun
   }
 }
 
-/* Tablet */
+/* Desktop breakpoint */
 @media (min-width: 600px) and (max-width: 1023px) {
   nav a {
     font-size: 1.4rem;
@@ -659,11 +678,33 @@ The gap property creates space between the columns, and padding adds space aroun
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+.hand {
+}
 /* Desktop */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .portfolio-grid,
   .intro-cards {
     grid-template-columns: repeat(3, 1fr);
   }
+} */
+
+/* === 
+clamp() = functions for fluid typography
+min() = function for responsive widths
+aspect-ratio = for maintaining proportions
+flex-wrap = flexbox
+=== */
+
+.glassBox {
+  display: flex;
+  justify-self: center;
+  background-color: rgba(211, 211, 211, 0.33);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  backdrop-filter: blur(20px);
 }
